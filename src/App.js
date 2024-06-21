@@ -5,12 +5,12 @@ const TodoList = lazy(() => import("TodoApp/TodoList"));
 
 function App() {
   return (
-    <div className="App">
+    <div className="shell">
+      <h1 style={{ marginBottom: "20px" }}>Container App</h1>
+
       <Suspense fallback={<div>Loading Todos...</div>}>
         <TodoList />
       </Suspense>
-
-      <div className="container">This is my home page</div>
     </div>
   );
 }
