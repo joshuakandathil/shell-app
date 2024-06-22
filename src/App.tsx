@@ -1,18 +1,18 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 
-const TodoList = lazy(() => import("TodoApp/TodoList"));
+const TodoApp = React.lazy(() => import("TodoApp/TodoWrapper"));
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="shell">
       <h1 style={{ marginBottom: "20px" }}>Container App</h1>
 
       <Suspense fallback={<div>Loading Todos...</div>}>
-        <TodoList />
+        <TodoApp />
       </Suspense>
     </div>
   );
-}
+};
 
 export default App;
